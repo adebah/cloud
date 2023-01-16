@@ -1,15 +1,28 @@
-
-Jenkinsfile (Scripted Pipeline)
-
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'maven:3.8.7-eclipse-temurin-11' } }
-    stages {
-        stage('build') {
+  agent any
+
+  stages {
+      
+/*        stage('build') {
             steps {
                 sh 'mvn --version'
             }
         }
+*/
+    stage("One") {
+      steps {
+        echo "Hello"
+      }
     }
+    stage("Evaluate Master") {
+      when {
+        // skip this stage unless on Master branch
+        branch "master"
+      }
+      steps {
+        echo "World"
+        echo "Heal it"
+      }
+    }
+  }
 }
-
