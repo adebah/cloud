@@ -1,5 +1,5 @@
 
-Jenkinsfile (Declarative Pipeline)
+Jenkinsfile (Scripted Pipeline)
 
 /* Requires the Docker Pipeline plugin */
 pipeline {
